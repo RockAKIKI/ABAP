@@ -1,0 +1,26 @@
+Managed querries /= jquerries
+
+
+
+GET I_PurchaseOrderEntity?$select=
+PurchaseOrder,PurchaseOrderType,PurchasingOrganization,PurchasingGroup,Purchas
+eOrderDate&$top=10&$orderby=PurchaseOrderDateasc&$filter=
+( PurchaseOrderDategedatetime'2018-01-
+01T00:00:00'andPurchaseOrderDateledatetime'2018-12-31T00:00:00')
+Listing 3.1 OData GET Request for the I_PurchaseOrderEntity OData Entity
+The SADL query framework will then transparently transform this request into an
+SQL SELECT statement on the I_PurchaseOrder CDS view, shown in Listing 3.2.
+SELECT
+PurchaseOrder,
+PurchaseOrderType,
+PurchasingOrganization,
+PurchasingGroup,
+PurchaseOrderDate
+FROM
+I_PurchaseOrder
+WHERE
+PurchaseOrderDateGE'20180601'
+AND PurchaseOrderDateLE'20180601'
+ORDERBY
+PurchaseOrderDateASCENDING
+UP TO10ROWS

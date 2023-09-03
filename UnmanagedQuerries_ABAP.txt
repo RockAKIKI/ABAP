@@ -1,0 +1,19 @@
+Unmanaged Queries
+
+
+@EndUserText.label:'EndUserText'
+@QueryImplementedBy:'QueryImplementationClass'
+define[root]customentityCustomEntityName
+[ withparameters
+ParamName:dtype[,...]]
+{
+[@element_annot]
+[key] ElemName:dtype;
+ElemName:dtype;
+...
+[ _Assoc:association[cardinality]toTargetEntityonCondExp[
+withdefaultfilterCondExp]];
+[ _Comp:composition[cardinality]ofTargetEntity];
+[ [@element_annot]
+_ParentAssoc:associationtoparentonCondExp];
+}

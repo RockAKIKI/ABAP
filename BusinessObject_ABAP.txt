@@ -1,0 +1,15 @@
+Business Objects
+
+@AbapCatalog.sqlViewName:'CDS_DB_VIEW'
+@[view_annotation_1]
+...
+@[view_annotation_n>]
+DEFINEROOTVIEWRootEntity
+[parameter_list]
+ASSELECTFROMdata_source[ASalias]
+COMPOSITION[min..max]OFChildEntityAS_childEntityONcondition_exp
+[additional_composition_list]
+[association_list]
+{
+ [element_list]
+}

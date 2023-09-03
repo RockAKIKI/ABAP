@@ -1,0 +1,45 @@
+Behavior Implementation
+
+CLASSclass_nameDEFINITIONPUBLIC
+ABSTRACT
+FINAL
+FOR BEHAVIOROFBehaviorDefinition.
+PUBLICSECTION.
+PROTECTEDSECTION.
+PRIVATESECTION.
+ENDCLASS.
+CLASSclass_nameIMPLEMENTATION.
+ENDCLASS.
+/* Associations*/
+associationAssociationName[abbreviationAbbreviationName]{[create;]}
+}
+
+
+CLASSlcl_handlerDEFINITIONINHERITINGFROMcl_abap_behavior_
+handlerABSTRACTFINAL.
+PRIVATESECTION.
+METHODS <method_name>FORMODIFY
+IMPORTING
+create_import_parameterFORCREATEentity
+update_import_parameterFORUPDATEentity
+delete_import_parameterFORDELETEentity
+action_import_parameterFORACTIONentity~action_name
+[RESULTaction_export_parameter].
+METHODS <method_name>FORLOCKIMPORTINGlock_import_
+parameterFORLOCKentity.
+METHODS <method_name>FORREADIMPORTINGread_import_parameter
+FOR READentity[RESULTread_export_parameter].
+ENDCLASS.
+
+
+
+
+
+CLASSlsc_saverDEFINITIONINHERITINGFROMcl_abap_behavior_saver
+ABSTRACTFINAL.
+PROTECTEDSECTION.
+METHODS finalizeREDEFINITION.
+METHODS check_before_saveREDEFINITION.
+METHODS adjust_numbersREDEFINITION.
+METHODS saveREDEFINITION.
+ENDCLASS.
